@@ -11,14 +11,15 @@
 <body>
   <?php
   try {
-    $DB_DATABASE = 'sumiajito_shitsu';
-    $DB_USERNAME = 'sumiajito_shitsu';
-    $DB_PASSWORD = 'Workup2019';
+    $DB_HOST = $_SERVER['DB_HOST'];
+    $DB_DATABASE = $_SERVER['DB_DATABASE'];
+    $DB_USERNAME = $_SERVER['DB_USERNAME'];
+    $DB_PASSWORD = $_SERVER['DB_PASSWORD'];
     $DB_OPTION = 'charset=utf8';
     $memo = filter_input(INPUT_POST, 'memo', FILTER_SANITIZE_SPECIAL_CHARS);
 
+    $PDO_DSN = "mysql:host=" . $DB_HOST . ";dbname=" . $DB_DATABASE . ";" . $DB_OPTION;
 
-    $PDO_DSN = "mysql:host=mysql1002b.xserver.jp;dbname=" . $DB_DATABASE . ";" . $DB_OPTION;
     $db = new PDO(
       $PDO_DSN,
       $DB_USERNAME,
