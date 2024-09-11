@@ -10,9 +10,9 @@ mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 //管理者へメール送信
 //送信元
-$header = "From: shitsukawa@officeworkup.co.jp";
+$header = "From: example@co.jp";
 /*管理者のメールアドレス*/
-$mail_to = "shitsukawa@officeworkup.co.jp";
+$mail_to = "example@co.jp";
 /*件名*/
 $subject = "お問い合わせがありました";
 /*本文*/
@@ -44,7 +44,7 @@ $success = mb_send_mail($mail_to, $subject, $body_msg, $header, $mail_to);
 
 
 //送信元
-$headers = "From: shitsukawa@officeworkup.co.jp";
+$headers = "From: example@co.jp";
 //送信先アドレス
 $to = $_POST['email'];
 //メール件名
